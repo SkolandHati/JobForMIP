@@ -14,7 +14,7 @@
         <div class="content">
 
           <div class="content__checkbox">
-            <div v-for="(item, index) in textInvictus.invictus"
+            <div class="checkbox" v-for="(item, index) in textInvictus.invictus"
                  :key="index">
               <buttons :item="item" @isSwitches="toggles"></buttons>
             </div>
@@ -59,32 +59,44 @@
 
  .page{
    display: grid;
+   grid-template-rows: 1fr;
    padding: 0 250px 0 250px;
    gap: 20px;
 
-   .head{
-
-     &-container{
-       display: flex;
-       gap: 25px;
-     }
-   }
-
    .head, .content{
      display: flex;
+   }
+
+   .head{
+     //grid-column: 1/-1;
      justify-content: center;
+
+     &-container{
+       position: relative;
+       display: flex;
+       gap: 25px;
+
+     }
    }
 
    .content{
+     @include grid(12, minmax(60px, 80px));
+
+     grid-column: 1/-1;
+     justify-content: center;
 
      &__checkbox{
        display: flex;
-       margin-right: 50px
+       grid-column: 1/5;
+
+       .checkbox{
+         display: flex;
+       }
      }
 
      &__text{
+       grid-column: 5/10;
        display: grid;
-       width: 250px;
        gap: 30px;
      }
    }

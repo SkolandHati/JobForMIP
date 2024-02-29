@@ -2,3 +2,15 @@
   display: grid;
   grid-template-columns: repeat($columns, $width);
 }
+
+@mixin mobile{
+  @media all and (max-width: 460px){
+    @content
+  }
+}
+
+@mixin desktop{
+  @media all and (min-width: 1360px) and (max-width: 8000px){
+    @content
+  }
+}

@@ -2,12 +2,11 @@
   <div class="checkbox">
       <input type="checkbox"
              value="one"
-             id="one"
+             :id="props.item.id"
              v-model="props.item.show"
              @click="isTabClick(props.item.id)"
              checked>
-    <span></span>
-    <label for="one"></label>
+      <label :for="props.item.id"></label>
   </div>
 </template>
 
@@ -30,37 +29,41 @@ function isTabClick(id){
 
 <style scoped>
 
-  .checkbox {
+  .checkbox{
 
     input[type=checkbox] {
       position: absolute;
       z-index: -1;
-      opacity: 0;
-      display: block;
       width: 0;
       height: 0;
+      opacity: 0;
 
-    }
-
-    span{
-
-      &::before{
-        cursor: pointer;
-        display: inline-block;
-        content: "";
-        width: 25px;
-        height: 25px;
-        border: 2px solid black;
+      &:checked + label {
+        border-color: #3E29E3;
+        background-color: #000000;
       }
-
     }
 
-    input[type=checkbox]:checked +span::before{
-      background-color: black;
+    input[type=checkbox] + label{
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+      color: #1B1B1B;
     }
 
+    input + label::before{
+      cursor: pointer;
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 2px solid #000000;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
   }
-
-
 
 </style>

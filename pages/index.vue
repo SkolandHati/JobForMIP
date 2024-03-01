@@ -4,7 +4,7 @@
     <header  class="head">
       <div class="head-container">
         <h1 class="name">Invictus</h1>
-        <h3 class="author">By William Ernest Henley</h3>
+<!--        <h3 class="author">By William Ernest Henley</h3>-->
       </div>
     </header>
 
@@ -68,7 +68,6 @@
    }
 
    .head{
-     //grid-column: 1/-1;
      justify-content: center;
 
      &-container{
@@ -76,20 +75,34 @@
        display: flex;
        gap: 25px;
 
+       .name{
+         position: relative;
+
+         &::after{
+           position: absolute;
+           content: "By William Ernest Henley";
+           width: max-content;
+           margin-left: 50px;
+           font-size: 22px;
+           top: 20px;
+         }
+       }
+
      }
    }
 
    .content{
      @include grid(12, minmax(60px, 80px));
-
      grid-column: 1/-1;
      justify-content: center;
 
      &__checkbox{
+       align-items: flex-start;
        display: flex;
        grid-column: 1/5;
 
        .checkbox{
+         width: 100%;
          display: flex;
        }
      }
@@ -106,7 +119,6 @@
 
       .content{
         display: block;
-
       }
     }
  }

@@ -29,9 +29,9 @@ npm run dev
 yarn dev
 ```
 
-## Production
+## Сборка
 
-Build the application for production:
+Сборка продукта:
 
 ```
 # npm

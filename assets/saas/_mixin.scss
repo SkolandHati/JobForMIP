@@ -4,13 +4,19 @@
 }
 
 @mixin mobile{
-  @media all and (max-width: 460px){
+  @media all and (max-device-width: 460px){
     @content
   }
 }
 
 @mixin desktop{
-  @media all and (min-width: 1360px) and (max-width: 8000px){
+  @media all and (min-width: 1250px) and (max-device-width: 8000px){
+    @content
+  }
+}
+
+@mixin intermediate{
+  @media all and (min-width: 460px) and (max-device-width: 1250px){
     @content
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="page">
 
-    <header  class="head">
+    <header class="head">
       <div class="head-container">
         <h1 class="name">Invictus</h1>
 <!--        <h3 class="author">By William Ernest Henley</h3>-->
@@ -85,6 +85,13 @@
            margin-left: 50px;
            font-size: 22px;
            top: 20px;
+
+           @include mobile{
+             width: 100%;
+             margin-left: 0;
+             left: 0;
+             top: 50px;
+           }
          }
        }
 
@@ -110,15 +117,33 @@
      &__text{
        grid-column: 5/10;
        display: grid;
-       gap: 30px;
+       gap: 20px;
      }
    }
 
     @include mobile{
       padding: 0 15px 0 15px;
+      gap: 75px;
 
       .content{
-        display: block;
+        display: grid;
+        @include grid(1, minmax(100px, 1fr));
+        grid-template-rows: 2fr;
+        gap: 20px;
+
+        &__checkbox{
+          grid-column: 1/-1;
+          grid-row: 1/-1;
+
+          .checkbox{
+            justify-content: center;
+          }
+        }
+
+        &__text{
+          grid-column: 1/-1;
+          grid-row: 2;
+        }
       }
     }
  }

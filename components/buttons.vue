@@ -39,7 +39,6 @@ function isTabClick(id){
       opacity: 0;
 
       &:checked + label {
-        border-color: #3E29E3;
         background-color: #000000;
       }
     }

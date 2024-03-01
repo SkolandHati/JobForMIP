@@ -1,7 +1,10 @@
 <template>
   <div style="display: block">
     <p>
-      {{props.item}}
+      {{props.item.part_one}}
+    </p>
+    <p>
+      {{props.item.part_two}}
     </p>
   </div>
 </template>
@@ -10,7 +13,7 @@
 
   const props = defineProps({
     item:{
-      type: String,
+      type: Object,
       required: true
     }
   })
@@ -19,5 +22,8 @@
 
 <style scoped lang="scss">
 
+  p{
+    text-align-last: center;
+  }
 
 </style>

@@ -12,18 +12,18 @@
 
 <script setup>
 
-const props = defineProps({
-  item:{
-    type: Object,
-    required: true
+  const props = defineProps({
+    item:{
+      type: Object,
+      required: true
+    }
+  })
+
+  const emits = defineEmits(['isSwitches'])
+
+  function isTabClick(id){
+    emits('isSwitches', id)
   }
-})
-
-const emits = defineEmits(['isSwitches'])
-
-function isTabClick(id){
-  emits('isSwitches', id)
-}
 
 </script>
 

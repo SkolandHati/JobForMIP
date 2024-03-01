@@ -1,0 +1,59 @@
+@import "mixin";
+
+@mixin mobileAndDesktop{
+  @include intermediate{
+    padding: 0 125px 0 125px;
+    font-size: 20px;
+    gap: 50px;
+
+    .content{
+      display: grid;
+      @include grid(auto-fit, minmax(100px, 2fr));
+      grid-template-rows: 2fr;
+      gap: 20px;
+
+      &__checkbox{
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+
+        .checkbox{
+          justify-content: center;
+        }
+      }
+
+      &__text{
+        grid-column: 1/-1;
+        grid-row: 2;
+      }
+    }
+  }
+
+  @include mobile{
+    padding: 0 15px 0 15px;
+    gap: 100px;
+    font-size: 18px;
+
+    .content{
+      display: grid;
+      @include grid(1, minmax(100px, 1fr));
+      grid-template-rows: 2fr;
+      gap: 20px;
+
+      &__checkbox{
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+
+        .checkbox{
+          justify-content: center;
+        }
+      }
+
+      &__text{
+        grid-column: 1/-1;
+        grid-row: 2;
+      }
+    }
+  }
+}
+
+

@@ -1,5 +1,5 @@
 <template>
-  <div style="display: block">
+  <div>
     <p>
       {{props.item.part_one}}
     </p>

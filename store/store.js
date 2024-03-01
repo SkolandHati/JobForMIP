@@ -29,10 +29,4 @@ export const useStore = defineStore('store', {
             }
         ]
     }),
-
-    actions: {
-        getText(){
-            return this.invictus
-        }
-    }
 })

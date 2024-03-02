@@ -40,13 +40,13 @@
 
 <script setup>
 
-  import buttons from "~/components/buttons.vue"
-  import container_text from "~/components/container_text.vue"
+  import buttons from "~/components/ButtonsCheckbox.vue"
+  import container_text from "~/components/ContainerText.vue"
   import {useStore} from "~/store/store.js";
 
-  let textInvictus = useStore()
+  const textInvictus = useStore()
 
-  function toggles(id) {
+  const toggles = (id) => {
     let copyItem =  textInvictus.invictus.find(item => item.id === id)
     copyItem.show = !copyItem.show
   }

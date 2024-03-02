@@ -1,7 +1,7 @@
 <template>
   <div class="checkbox">
       <input type="checkbox"
-             value="one"
+             :value="props.item"
              :id="props.item.id"
              v-model="props.item.show"
              @click="isTabClick(props.item.id)"
@@ -31,14 +31,14 @@
 
   .checkbox{
 
-    input[type=checkbox] {
+    input[type=checkbox]{
       position: absolute;
       z-index: -1;
       width: 0;
       height: 0;
       opacity: 0;
 
-      &:checked + label {
+      &:checked + label{
         background-color: #000000;
       }
     }

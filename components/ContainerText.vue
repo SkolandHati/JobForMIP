@@ -1,10 +1,8 @@
 <template>
-  <div>
+  <div v-for="(item, index) in props.item"
+       :key="index">
     <p>
-      {{props.item.part_one}}
-    </p>
-    <p>
-      {{props.item.part_two}}
+      {{item}}
     </p>
   </div>
 </template>
